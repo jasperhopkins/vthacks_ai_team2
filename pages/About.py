@@ -41,6 +41,64 @@ st.markdown("""
 
 st.markdown("---")
 
+st.markdown("## 📆 Project Timeline")
+
+st.markdown("""
+<style>
+.timeline-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+.timeline-card {
+    background-color: #f0f0f0;
+    border-left: 6px solid #4B8BBE;
+    padding: 15px;
+    width: 180px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    font-family: sans-serif;
+}
+.timeline-card h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+.timeline-card p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+}
+</style>
+
+<div class="timeline-container">
+    <div class="timeline-card">
+        <h4>Sept 26 @ 8:00pm</h4>
+        <p>Brainstormed and researches text compression.</p>
+    </div>
+    <div class="timeline-card">
+        <h4>Sept 26 @ 9:00pm</h4>
+        <p>Implemented a first draft that kinda cooked.</p>
+    </div>
+    <div class="timeline-card">
+        <h4>Sept 27</h4>
+        <p>Vibe coded Streamlit UI/UX. Made multiple pages for the site.</p>
+    </div>
+    <div class="timeline-card">
+        <h4>Sept 27 @ Night</h4>
+        <p>Lost track of time, forgot to shower, made an awesome program.</p>
+    </div>
+    <div class="timeline-card">
+        <h4>Sept 28</h4>
+        <p>Project sumbitted, nail bitting, nerves.</p>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+
+
 # Footer
 st.markdown("""
     <div style='text-align:center; font-size:14px; color:gray; padding-top:20px;'>
