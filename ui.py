@@ -20,14 +20,17 @@ if st.button("Compress"):
         return_word_label=True,
         drop_consecutive=True
     )
-    st.subheader("Compressed Output")
+    st.subheader(f"Compressed Output: {results['rate']}")
     st.write(results['compressed_prompt'])
 
     st.subheader("Annotated Tokens")
     word_sep = "\t\t|\t\t"
     label_sep = " "
     lines = results["fn_labeled_original_prompt"].split(word_sep)
+    html_string = ""
     for line in lines:
         word, label = line.split(label_sep)
         color = "green" if label == '1' else "red"
-        st.markdown(f"<span style='color:{color}'>{word}</span>", unsafe_allow_html=True)
+        html_string += f"<span style='color:{color}'>{word}</span> "
+        # st.markdown(f"<span style='color:{color}'>{word}</span>", unsafe_allow_html=True)
+    st.markdown(html_string, unsafe_allow_html=True)
