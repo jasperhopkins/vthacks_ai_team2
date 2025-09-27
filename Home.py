@@ -9,6 +9,8 @@ st.set_page_config(
 
 st.title("🏠 Home Page")
 st.page_link("pages/API_Configuration.py", label="API Configuration", icon="💻")
+st.page_link("pages/About.py", label="About", icon="ℹ️")
+
 col1, col2, col3 = st.columns(3)
 
 with col1:
