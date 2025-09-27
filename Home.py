@@ -13,8 +13,9 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
 
-    st.title("Prompt Compressor")
-    prompt = st.text_area("Enter your prompt", height=300)
+    # st.title("Prompt Compressor")
+    st.subheader("Prompt Compressor")
+    prompt = st.text_area("",height=300, placeholder="Enter your prompt here...", label_visibility="collapsed")
 
     rate = st.slider("Compression Rate", 0.1, 1.0, 0.5)
 
@@ -27,7 +28,7 @@ with col1:
         results = compressor.compress_prompt_llmlingua2(
             prompt,
             rate=rate,
-            force_tokens=['\n', '.', '!', '?', ','],
+            # force_tokens=['\n', '.', '!', '?', ','],
             chunk_end_tokens=['.', '\n'],
             return_word_label=True,
             drop_consecutive=True
