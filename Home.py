@@ -52,3 +52,8 @@ with col1:
         with col3:
             st.subheader("Annotated Tokens")
             st.markdown(html_string, unsafe_allow_html=True)
+            # include processing parameters (tokens count, etc)
+            st.markdown("---")
+            st.markdown(f"**Original Tokens:** {results['origin_tokens']}")
+            st.markdown(f"**Compressed Tokens:** {results['compressed_tokens']}")
+            
