@@ -8,7 +8,7 @@ st.set_page_config(
 )
 
 st.title("🏠 Home Page")
-st.page_link("pages/API_Configuration.py", label="API Configuration", icon="🏢")
+st.page_link("pages/API_Configuration.py", label="API Configuration", icon="💻")
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -35,7 +35,7 @@ with col1:
         )
         with col2:
             st.subheader(f"Compressed Output: {results['rate']}")
-            st.text_area("Output", value=results['compressed_prompt'],height=500, label_visibility="collapsed"
+            st.text_area("Output", value=results['compressed_prompt'],height=400, label_visibility="collapsed"
             )
             # st.markdown(f'<div class="wrap-text">{results['compressed_prompt']}</div>', unsafe_allow_html=True)
             # st.write(results['compressed_prompt'])
