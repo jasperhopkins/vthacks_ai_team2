@@ -1,5 +1,5 @@
 import streamlit as st
-from litellm import completion
+# from litellm import completion
 from platformdirs import user_config_dir
 import json
 from pathlib import Path

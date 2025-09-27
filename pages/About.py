@@ -9,7 +9,7 @@ st.set_page_config(
 
 # Top banner
 st.markdown("""
-    <div style='background-color:#4B8BBE; padding:20px; text-align:center; color:white; font-size:36px; font-weight:bold;'>
+    <div style='background-color:#F5F5F5; padding:20px; text-align:center; color:black; font-size:36px; font-weight:bold;'>
         ℹ️ About This App
     </div>
 """, unsafe_allow_html=True)
@@ -28,8 +28,7 @@ st.markdown("""
 """)
 
 st.markdown("## 👥 Meet the Team")
-st.markdown("""
-- **j** — UI design  
+st.markdown(""" 
 - **Team Members** — (Add names and roles here)
 """)
 
