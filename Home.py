@@ -19,6 +19,9 @@ with col1:
     rate = st.slider("Compression Rate", 0.1, 1.0, 0.5)
 
     if st.button("Compress"):
+        if not prompt:
+            st.warning("Please enter a valid prompt.", icon="☢️")
+            st.stop()
         compressor = PromptCompressor(
             model_name="microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank",
             use_llmlingua2=True,
