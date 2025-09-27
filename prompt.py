@@ -2,7 +2,8 @@ from llmlingua import PromptCompressor
 
 compressor = PromptCompressor(
     model_name="microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank",
-    use_llmlingua2=True
+    use_llmlingua2=True,
+    device_map="cpu"
 )
 
 original_prompt = """John: So, um, I've been thinking about the project, you know, and I believe we need to, uh, make some changes. I mean, we want the project to succeed, right? So, like, I think we should consider maybe revising the timeline.
@@ -10,7 +11,7 @@ Sarah: I totally agree, John. I mean, we have to be realistic, you know. The tim
 """
 results = compressor.compress_prompt_llmlingua2(
     original_prompt,
-    rate=0.6,
+    rate=0.3,
     force_tokens=['\n', '.', '!', '?', ','],
     chunk_end_tokens=['.', '\n'],
     return_word_label=True,
@@ -22,6 +23,7 @@ print(f"Compressed prompt: {results['compressed_prompt']}")
 print(f"Original tokens: {results['origin_tokens']}")
 print(f"Compressed tokens: {results['compressed_tokens']}")
 print(f"Compression rate: {results['rate']}")
+print(f"Final: {results['compressed_prompt']}")
 
 # get the annotated results over the original prompt
 word_sep = "\t\t|\t\t"
