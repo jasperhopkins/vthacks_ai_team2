@@ -1,12 +1,12 @@
 import streamlit as st
 from llmlingua import PromptCompressor
-from openai import OpenAI
-from dotenv import dotenv_values
+# from openai import OpenAI
+# from dotenv import dotenv_values
 
 
-client = OpenAI(
-  api_key=dotenv_values()["OPENAI_API_KEY"]
-)
+# client = OpenAI(
+#   api_key=dotenv_values()["OPENAI_API_KEY"]
+# )
 
 st.set_page_config(layout="wide") 
 col1, col2, col3 = st.columns(3)
@@ -16,7 +16,7 @@ with col1:
     st.title("Prompt Compressor")
     prompt = st.text_area("Enter your prompt", height=300)
 
-    rate = st.slider("Compression Rate", 0.1, 1.0, 0.6)
+    rate = st.slider("Compression Rate", 0.1, 1.0, 0.5)
 
     if st.button("Compress"):
         compressor = PromptCompressor(
@@ -51,14 +51,14 @@ with col1:
         with col3:
             st.subheader("Annotated Tokens")
             st.markdown(html_string, unsafe_allow_html=True)
-            if (client.api_key != ""):
-                response = None
-                with st.spinner("Loading AI Response", show_time=True):
-                    response = client.responses.create(
-                        model="gpt-5-nano",
-                        input=results['compressed_prompt'],
-                        store=True
-                    )
-                if (response is not None):
-                    st.subheader("GPT Response:")
-                    st.write(response.output_text)
+            # if (client.api_key != ""):
+            #     response = None
+            #     with st.spinner("Loading AI Response", show_time=True):
+            #         response = client.responses.create(
+            #             model="gpt-5-nano",
+            #             input=results['compressed_prompt'],
+            #             store=True
+            #         )
+            #     if (response is not None):
+            #         st.subheader("GPT Response:")
+            #         st.write(response.output_text)
