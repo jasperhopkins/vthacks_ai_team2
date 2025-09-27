@@ -1,5 +1,4 @@
 import streamlit as st
-# from litellm import completion
 from platformdirs import user_config_dir
 import json
 from pathlib import Path
@@ -34,26 +33,20 @@ def save_config(config):
 def get_default_config():
     return {
         "profiles": {
-            "openai-gpt4": {
-                "name": "GPT-4 Production",
-                "provider": "openai",
-                "model": "gpt-4",
-                "api_key": "",
-                "base_url": None
-            },
-            "local-llama": {
-                "name": "Local Llama",
-                "provider": "ollama",
-                "model": "llama2",
+            "no-llm": {
+                "name": "No LLM (Just Compression)",
+                "provider": "none",
+                "model": "none",
                 "api_key": None,
-                "base_url": "http://localhost:11434"
+                "base_url": None
             }
         },
-        "default_profile": "openai-gpt4"
+        "default_profile": "no-llm"
     }
 
 # Load existing config
 config = load_config()
+print(config)
 
 st.title("💻 API Configuration")
 st.page_link("Home.py", label="Home", icon="🏠")
