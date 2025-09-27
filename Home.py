@@ -16,7 +16,7 @@ with col1:
     st.title("Prompt Compressor")
     prompt = st.text_area("Enter your prompt", height=300)
 
-    rate = st.slider("Compression Rate", 0.1, 1.0, 0.6)
+    rate = st.slider("Compression Rate", 0.1, 1.0, 0.5)
 
     if st.button("Compress"):
         compressor = PromptCompressor(
