@@ -29,7 +29,7 @@ st.markdown("""
 
 st.markdown("## 👥 Meet the Team")
 st.markdown(""" 
-- **Team Members** — Jasper Hopkins
+- **Team Members** — Jasper Hopkins, Garrison Underwood
 """)
 
 st.markdown("## 🛠️ Technologies Used")
