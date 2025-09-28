@@ -53,7 +53,7 @@ with col1:
 
     st.subheader("Prompt Compressor")
 
-    prompt = st.text_area("Enter your prompt here...", height=300, value=st.session_state.prompt, placeholder="Enter your prompt here...", label_visibility="collapsed")
+    prompt = st.text_area("Enter your prompt here...", height=300, placeholder="Enter your prompt here...", label_visibility="collapsed")
 
     st.subheader("🤖 LLM Configuration")
     if config["profiles"]:
@@ -91,13 +91,10 @@ with col1:
     if 'history' not in st.session_state:
         st.session_state.history = [];
 
-    button_col1, button_col2, button_col3 = st.columns(3)
+    button_col1, button_col2 = st.columns(2)
     with button_col1:
         add_history = st.checkbox("Add prompt and response to history", value=False)
     with button_col2:
-        if st.button("Enhance"):
-            pass
-    with button_col3:
         if st.button("Compress"):
             if not prompt:
                 st.warning("Please enter a valid prompt.", icon="☢️")
