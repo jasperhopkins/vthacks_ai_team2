@@ -46,7 +46,6 @@ def get_default_config():
 
 # Load existing config
 config = load_config()
-print(config)
 
 st.title("💻 API Configuration")
 st.page_link("Home.py", label="Home", icon="🏠")
